@@ -1,0 +1,103 @@
+.music-headline {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ee4622;
+  margin-bottom: 80px;
+}
+
+.container-card-music {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #3a3a3a;
+  border-radius: 10px !important;
+}
+
+.card-body.card-music {
+  height: 80px;
+}
+
+.card-title {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+  border: none;
+  background: none;
+}
+
+.card-title:hover {
+  color: #ee4622;
+}
+
+.card-text.card-text-music {
+  font-family: Product Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #929292;
+}
+
+.card-img-top.card-img-music {
+  height: 150px;
+}
+
+.search-music {
+  border: 1px solid #ee4622 !important;
+}
+
+.searchbox-container {
+  display: flex;
+  width: 270px;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 1000px) {
+  .row {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .container-fluid > h3 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .col-md {
+    display: flex;
+    text-align: center;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+
+  .card {
+    width: 250px;
+  }
+
+  .card-artist-name {
+    font-family: Product Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left !important;
+    color: #ffffff;
+  }
+
+  .searchbox-container {
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-music {
+    width: 300px;
+  }
+}

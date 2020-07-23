@@ -1,0 +1,98 @@
+.card-upgrade {
+  margin-top: 250px;
+}
+
+.card-title-upgrade {
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  color: #ffffff;
+}
+
+.card-body.card-body-upgrade {
+  width: 600px;
+  background-color: #1f1f1f;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+}
+
+.card-text-upgrade {
+  font-family: Avenir;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.card-text span {
+  color: #cc040e;
+  font-size: 18px;
+}
+
+#accNumber {
+  color: rgb(28, 126, 3);
+}
+
+.upgrade-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  height: 170px;
+  width: 350px;
+}
+
+.btn-attach {
+  background-color: #ffffff;
+  color: #ee4622;
+  margin-bottom: 15px;
+}
+
+.btn-send {
+  background-color: #ee4622;
+  color: #ffffff;
+}
+
+.btn-add-attachment-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-subtitle {
+  color: #ee4622;
+}
+
+.btn-upgrade-modal {
+  margin-top: 10px;
+  background-color: #ee4622;
+  border: none;
+}
+
+.btn-upgrade-modal:hover {
+  background-color: #ffffff !important;
+  color: #ee4622 !important;
+}
+
+.price-tag-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40px;
+}
+
+.pricing-card-title {
+  margin-bottom: 0px !important;
+}
+
+.card-text-pricing {
+  line-height: 200%;
+}
+
+.prepend-wrapper2 {
+  margin-bottom: 0 !important;
+}
+
+.prepend-content2 {
+  font-size: 30px;
+}

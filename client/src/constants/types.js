@@ -1,0 +1,11 @@
+export const REGISTER = "REGISTER";
+export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
+export const CLEAR_AUTH_ERROR = "CLEAR_AUTH_ERROR";
+export const GET_ARTIST_ALL = "GET_ARTIST_ALL";
+export const GET_MUSIC_ALL = "GET_MUSIC_ALL";
+export const ADD_ARTIST = "ADD_ARTIST";
+export const ADD_MUSIC = "ADD_MUSIC";
+export const GET_TRANSACTIONS = "GET_TRANSACTIONS";
+export const ADD_TRANSACTION = "ADD_TRANSACTION";
+export const UPDATE_TRANSACTION = "UPDATE_TRANSACTION";
