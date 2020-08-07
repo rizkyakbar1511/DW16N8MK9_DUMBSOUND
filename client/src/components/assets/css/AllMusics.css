@@ -9,17 +9,13 @@
 }
 
 .container-card-music {
-  width: 1300px;
+  width: 1200px;
   margin: 0 auto;
 }
 
 .card {
   background-color: #3a3a3a;
   border-radius: 10px !important;
-}
-
-.card-body.card-music {
-  height: 80px;
 }
 
 .card-title {
@@ -30,6 +26,10 @@
   color: #ffffff;
   border: none;
   background: none;
+}
+
+.card-title-music {
+  font-size: 14px;
 }
 
 .card-title:hover {

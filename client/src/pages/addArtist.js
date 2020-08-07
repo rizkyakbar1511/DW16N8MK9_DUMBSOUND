@@ -41,7 +41,7 @@ class AddArtist extends Component {
 
     return (
       <>
-        <div className="row">
+        <div>
           {artistAdded && <ToastContainer />}
           <div className="container-fluid add-music-wrapper">
             <p id="headline-add-film">Add Artist</p>

@@ -38,7 +38,7 @@ class AddMusic extends Component {
 
     return (
       <>
-        <div className="row">
+        <div>
           <div className="container-fluid add-music-wrapper">
             <p id="headline-add-film">Add Music</p>
             {errorLogger && (

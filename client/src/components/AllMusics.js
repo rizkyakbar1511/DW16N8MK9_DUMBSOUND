@@ -79,41 +79,57 @@ class AllMusics extends Component {
       );
 
       MusicCard = (
-        <div className="row mt-3">
-          {currentCards.map((data, index) => {
-            return (
-              <div className="col-md-2 mb-5" key={data.id}>
-                <div className="card card-all-music px-1">
-                  <>
-                    <img
-                      className="card-img-top card-img-music"
-                      src={data.thumbnail}
-                      alt="music-card"
-                    />
-                    {load ? (
-                      <p>Checking user. . . .</p>
-                    ) : (
-                      <div
-                        className="card-body card-music p-0 mt-3"
-                        style={{ width: "100%" }}
-                      >
-                        {isAuthenticated ? (
-                          dataUser.subscription === true ? (
-                            <button
-                              type="button"
-                              onClick={() =>
-                                this.setState({ playIndex: index })
-                              }
-                              className="card-title card-title-music"
-                            >
-                              {data.title}
-                            </button>
+        <div className="container-allmusics-card">
+          <div className="row mt-3">
+            {currentCards.map((data, index) => {
+              return (
+                <div className="col-md-2 mb-5" key={data.id}>
+                  <div className="card card-all-music px-1">
+                    <>
+                      <img
+                        className="card-img-top card-img-music"
+                        src={data.thumbnail}
+                        alt="music-card"
+                      />
+                      {load ? (
+                        <p>Checking user. . . .</p>
+                      ) : (
+                        <div
+                          className="card-body card-music p-0 mt-3"
+                          style={{ width: "100%" }}
+                        >
+                          {isAuthenticated ? (
+                            dataUser.subscription === true ? (
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  this.setState({ playIndex: index })
+                                }
+                                className="card-title card-title-music"
+                              >
+                                {data.title}
+                              </button>
+                            ) : (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={this.unSubNotify}
+                                  className="card-title"
+                                >
+                                  {data.title}
+                                </button>
+                                <ToastContainer
+                                  closeButton={false}
+                                  style={{ width: "400px" }}
+                                />
+                              </>
+                            )
                           ) : (
                             <>
                               <button
                                 type="button"
-                                onClick={this.unSubNotify}
                                 className="card-title"
+                                onClick={this.notLoggedIn}
                               >
                                 {data.title}
                               </button>
@@ -122,69 +138,55 @@ class AllMusics extends Component {
                                 style={{ width: "400px" }}
                               />
                             </>
-                          )
-                        ) : (
-                          <>
-                            <button
-                              type="button"
-                              className="card-title"
-                              onClick={this.notLoggedIn}
-                            >
-                              {data.title}
-                            </button>
-                            <ToastContainer
-                              closeButton={false}
-                              style={{ width: "400px" }}
-                            />
-                          </>
-                        )}
-                        <p className="card-artist-name">{data.Artist.name}</p>
-                        <p className="card-text card-text-music">
-                          Released : {data.year}
-                        </p>
-                      </div>
-                    )}
-                  </>
+                          )}
+                          <p className="card-artist-name">{data.Artist.name}</p>
+                          <p className="card-text card-text-music">
+                            Released : {data.year}
+                          </p>
+                        </div>
+                      )}
+                    </>
+                  </div>
                 </div>
+              );
+            })}
+            <Pagination
+              cardsPerPage={cardsPerPage}
+              totalCards={allMusics.Music.length}
+              paginate={this.paginate}
+            />
+            {load ? (
+              <p>Fetching Data . . . .</p>
+            ) : (
+              <div
+                style={{
+                  height: "100px",
+                  width: "100%",
+                }}
+              >
+                {isAuthenticated && dataUser.subscription === true ? (
+                  <ReactJkMusicPlayer
+                    getAudioInstance={(instance) =>
+                      (this.audioInstance = instance)
+                    }
+                    autoPlay={false}
+                    audioLists={currentCards.map((music) => ({
+                      name: music.title,
+                      singer: music.Artist.name,
+                      cover: music.thumbnail,
+                      musicSrc: music.musicLink,
+                    }))}
+                    mode="full"
+                    playIndex={playIndex}
+                    glassBg={true}
+                    clearPriorAudioLists={true}
+                    showDownload={false}
+                    showThemeSwitch={false}
+                  />
+                ) : null}
               </div>
-            );
-          })}
-          <Pagination
-            cardsPerPage={cardsPerPage}
-            totalCards={allMusics.Music.length}
-            paginate={this.paginate}
-          />
-          {load ? (
-            <p>Fetching Data . . . .</p>
-          ) : (
-            <div
-              style={{
-                height: "100px",
-                width: "100%",
-              }}
-            >
-              {isAuthenticated && dataUser.subscription === true ? (
-                <ReactJkMusicPlayer
-                  getAudioInstance={(instance) =>
-                    (this.audioInstance = instance)
-                  }
-                  autoPlay={false}
-                  audioLists={currentCards.map((music) => ({
-                    name: music.title,
-                    singer: music.Artist.name,
-                    cover: music.thumbnail,
-                    musicSrc: music.musicLink,
-                  }))}
-                  mode="full"
-                  playIndex={playIndex}
-                  glassBg={true}
-                  clearPriorAudioLists={true}
-                  showDownload={false}
-                  showThemeSwitch={false}
-                />
-              ) : null}
-            </div>
-          )}
+            )}
+          </div>
         </div>
       );
     }

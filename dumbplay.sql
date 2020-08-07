@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 06:36 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Host: localhost
+-- Generation Time: Aug 07, 2020 at 04:15 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `artists`
+-- Table structure for table `Artists`
 --
 
-CREATE TABLE `artists` (
+CREATE TABLE `Artists` (
   `id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
@@ -39,32 +38,24 @@ CREATE TABLE `artists` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `artists`
+-- Dumping data for table `Artists`
 --
 
-INSERT INTO `artists` (`id`, `name`, `age`, `type`, `startCareer`, `createdAt`, `updatedAt`) VALUES
-(1, 'Bon Jovi', 25, 'Band', '1983', '2020-06-23 04:22:20', '2020-06-23 04:22:20'),
-(2, 'Linkin Park', 19, 'Band', '1996', '2020-06-23 08:19:14', '2020-06-23 08:19:14'),
-(3, '30 Second to mars', 15, 'Band', '2006', '2020-06-23 09:31:09', '2020-06-23 09:31:09'),
-(4, 'Evanescence', 18, 'band', '1995', '2020-06-23 14:53:15', '2020-06-23 14:53:15'),
-(5, 'My Chemical Romance', 15, 'band', '1998', '2020-06-23 15:07:35', '2020-06-23 15:07:35'),
-(6, 'Aimer', 29, 'solo', '2011', '2020-06-29 18:37:46', '2020-06-29 18:37:46'),
-(7, 'Fall Out Boy', 19, 'band', '2001', '2020-06-30 09:55:22', '2020-06-30 09:55:22'),
-(8, 'Good Charlotte', 15, 'band', '1996', '2020-07-03 04:19:24', '2020-07-03 04:19:24'),
-(9, 'Luck Life', 12, 'band', '2008', '2020-07-12 07:32:28', '2020-07-12 07:32:28'),
-(10, 'Chiai Fujikawa', 25, 'solo', '2015', '2020-07-12 08:01:20', '2020-07-12 08:01:20'),
-(11, 'Haruka Tomatsu', 30, 'solo', '2009', '2020-07-12 08:03:17', '2020-07-12 08:03:17'),
-(12, 'EGOIST', 9, 'solo', '2011', '2020-07-12 08:17:45', '2020-07-12 08:17:45'),
-(13, 'Slipknot', 25, 'band', '2004', '2020-07-12 08:58:44', '2020-07-12 08:58:44'),
-(14, 'Guns N\' Roses', 32, 'band', '1987', '2020-07-12 08:59:54', '2020-07-12 08:59:54');
+INSERT INTO `Artists` (`id`, `name`, `age`, `type`, `startCareer`, `createdAt`, `updatedAt`) VALUES
+(1, 'Evanescence', 20, 'band', '2002', '2020-07-08 13:10:04', '2020-07-08 13:10:04'),
+(2, 'Simple Plan', 25, 'band', '1999', '2020-07-08 13:15:30', '2020-07-08 13:15:30'),
+(3, 'System of a down', 26, 'band', '1994', '2020-07-08 13:19:32', '2020-07-08 13:19:32'),
+(4, 'Ikimono Gakari', 20, 'band', '1999', '2020-07-08 14:01:24', '2020-07-08 14:01:24'),
+(5, 'Aimer', 29, 'solo', '2011', '2020-07-08 14:07:54', '2020-07-08 14:07:54'),
+(6, 'Samson', 15, 'band', '2001', '2020-07-09 03:50:35', '2020-07-09 03:50:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `music`
+-- Table structure for table `Music`
 --
 
-CREATE TABLE `music` (
+CREATE TABLE `Music` (
   `id` int(11) NOT NULL,
   `artistId` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
@@ -76,38 +67,33 @@ CREATE TABLE `music` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `music`
+-- Dumping data for table `Music`
 --
 
-INSERT INTO `music` (`id`, `artistId`, `title`, `year`, `thumbnail`, `musicLink`, `createdAt`, `updatedAt`) VALUES
-(2, 1, 'Always', '1994', 'https://m.media-amazon.com/images/M/MV5BYzk5NmZhZTUtMmUyMC00ZmQ3LWFmZWEtMmE2ZGIxNzk3NmJlXkEyXkFqcGdeQXVyNTk1NTMyNzM@._V1_UY1200_CR137,0,630,1200_AL_.jpg', 'https://download.mp3-here.icu/c/Bon-Jovi-Always.mp3', '2020-06-23 04:22:35', '2020-06-23 04:22:35'),
-(3, 2, 'Numb', '2003', 'https://upload.wikimedia.org/wikipedia/en/b/b9/Linkin_Park_-_Numb_CD_cover.jpg', 'https://download.mp3-here.icu/k/Linkin-Park-Numb.mp3', '2020-06-23 08:22:31', '2020-06-23 08:22:31'),
-(4, 3, 'The kill', '2006', 'https://www.ultimate-guitar.com/static/article/news/7/87297_ver1552057031.jpg', 'https://fr02.mp3pro.xyz/ce58407c5a9d667a42d0a/The%20Kill%20%28Bury%20Me%29%20-%2030%20Seconds%20To%20Mars%20HQ.mp3', '2020-06-23 09:36:47', '2020-06-23 09:36:47'),
-(5, 3, 'From Yesterday', '1995', 'https://echelonsfl.files.wordpress.com/2011/11/fyposter.jpg?w=584', 'http://fr04.mp3pro.xyz/882ebb4d5a8f7ce30d1f1/30%20Seconds%20To%20Mars%20From%20Yesterday.mp3', '2020-06-23 12:31:07', '2020-06-23 12:31:07'),
-(6, 4, 'Bring Me To Life', '2003', 'https://3.bp.blogspot.com/-jjPPddWRL38/WGR0hCznqbI/AAAAAAAAAxo/Dly72q_qJ-QubMd_FNooc-O-aH6endryACPcB/s1600/lirik%2Bterjemah%2Bevanescence.jpg', 'http://fr05.mp3pro.xyz/aaa2004d5a8f7c73a8e07/Evanescence-Bring%20Me%20To%20Life.mp3', '2020-06-23 15:06:57', '2020-06-23 15:06:57'),
-(7, 2, 'In The End', '2002', 'https://i1.sndcdn.com/artworks-000596358704-vv29dg-t500x500.jpg', 'http://nl02.mp3pro.xyz/a4538e415a8fa2cf855bc/In%20the%20end%20-%20Linkin%20Park%20%28with%29.mp3', '2020-06-26 10:29:23', '2020-06-26 10:29:23'),
-(8, 6, 'Polaris', '2013', 'https://c-sf.smule.com/rs-s78/arr/ae/d5/3b8e32b4-6026-4ee0-b1d2-f45cccf3dfce_1024.jpg', 'https://nl05.mp3pro.xyz/b5d934615a9d66e1f4372/Aimer%20Polaris.mp3', '2020-06-29 18:43:13', '2020-06-29 18:43:13'),
-(10, 7, 'Dead On Arrival', '2003', 'https://vignette.wikia.nocookie.net/falloutboy/images/3/30/Take_This_to_Your_Grave.jpg/revision/latest?cb=20150405011117', 'https://nl02.mp3pro.xyz/a8b6a6435a9d671e842ae/Fall%20Out%20Boy%20-%20Dead%20On%20Arrival.mp3', '2020-06-30 09:56:56', '2020-06-30 09:56:56'),
-(11, 8, 'Broken Heart Parade', '2007', 'https://img.discogs.com/o9eaFw3l4cwXeov7G_UejgHJrIU=/fit-in/599x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-938881-1175080409.jpeg.jpg', 'http://fr01.mp3pro.xyz/5cfc7fc95a981d66c34a2/Good%20Charlotte-Broken%20Hearts%20Parade%20-.mp3', '2020-07-03 04:21:32', '2020-07-03 04:21:32'),
-(12, 5, 'Cancer', '2016', 'https://i.pinimg.com/originals/e3/11/c9/e311c99055a5f158f3b999fd11009a42.jpg', 'https://nl01.mp3pro.xyz/405106875a9d2ae4b2445/My%20Chemical%20Romance%20-%20%5BCancer%5D.mp3', '2020-07-07 04:55:51', '2020-07-07 04:55:51'),
-(13, 8, 'The River', '2007', 'https://upload.wikimedia.org/wikipedia/en/2/2f/The_river_cover.jpg', 'https://nl05.mp3pro.xyz/50af19445a9d64f30a9d2/The%20River%20-%20Good%20Charlotte%20%28with%29.mp3', '2020-07-07 09:07:53', '2020-07-07 09:07:53'),
-(14, 9, 'Lily', '2019', 'https://www.generasia.com/w/images/thumb/1/17/Luck_Life_-_Lily_artist.jpg/250px-Luck_Life_-_Lily_artist.jpg', 'https://nl04.mp3pro.xyz/3831da6d5aa39978e662e/%E3%80%8CLily%E3%80%8D-%20Luck%20Life%20Bungou%20Stray%20Dogs%203%20ED%20%5BLEGENDADO%20PT-BR%5D.mp3', '2020-07-12 07:35:04', '2020-07-12 07:35:04');
+INSERT INTO `Music` (`id`, `artistId`, `title`, `year`, `thumbnail`, `musicLink`, `createdAt`, `updatedAt`) VALUES
+(1, 1, 'Bring Me To Life', '2003', 'https://i1.sndcdn.com/artworks-000575750300-d8jycp-t500x500.jpg', 'https://nl06.mp3pro.xyz/c3223dfb5a9edda22d78f/Evanescence-Bring%20Me%20To%20Life.mp3', '2020-07-08 13:12:56', '2020-07-08 13:12:56'),
+(2, 2, 'Perfect', '2002', 'https://3.bp.blogspot.com/__KbibfFe7TM/TSLi4-EDX4I/AAAAAAAAApw/BHMT-yn15QI/s1600/album-simple-plan.jpg', 'https://nl03.mp3pro.xyz/25c3eded5a9edee863a44/Simple%20Plan%20-%20Perfect.mp3', '2020-07-08 13:17:59', '2020-07-08 13:17:59'),
+(3, 3, 'Toxicity', '2001', 'https://images.genius.com/be6e91a03c917482ee2c5c8e1598a31c.1000x1000x1.jpg', 'https://fr01.mp3pro.xyz/c16bf9ac5a9edf92821fa/System%20of%20a%20down%20-%20Toxicity%20-.mp3', '2020-07-08 13:20:48', '2020-07-08 13:20:48'),
+(4, 4, 'Sakura', '2006', 'https://images.genius.com/312820b7ce348b5ad75e9d97628e644d.600x600x1.jpg', 'https://nl02.mp3pro.xyz/b36c54ea5a9ee8baba10d/%E3%81%84%E3%81%8D%E3%82%82%E3%81%AE%E3%81%8C%E3%81%8B%E3%82%8A%28Ikimonogakari%29%20-%20SAKURA%20%28Kan%20Rom%20Eng%20Esp%29.mp3', '2020-07-08 14:03:10', '2020-07-08 14:03:10'),
+(5, 4, 'Last Scene', '2016', 'https://4.bp.blogspot.com/-VFVPF1AFCzI/V9Z5GubvV3I/AAAAAAAAEpU/ZFLFMYOGGUIyNReKZBCvZzFGhv5ILqotQCLcB/s1600/last_scene1.jpg', 'https://nl01.mp3pro.xyz/c9c941c05a9ee9688f3b7/Ikimono%20Gakari%20-%20Last%20Scene%20%5BWith%5D.mp3', '2020-07-08 14:05:26', '2020-07-08 14:05:26'),
+(6, 5, 'Words', '2013', 'https://i.ytimg.com/vi/Z3GkiupDtZM/sddefault.jpg', 'https://fr02.mp3pro.xyz/f13a2d675a9eea51a8f55/%E3%80%90HD%E3%80%91After%20Dark%20-%20Aimer%20-%20words%E3%80%90%E4%B8%AD%E6%97%A5%E5%AD%97%E5%B9%95%E3%80%91.mp3', '2020-07-08 14:09:06', '2020-07-08 14:09:06'),
+(7, 6, 'Kenangan Terindah', '2005', 'https://i.ytimg.com/vi/X0YDGxu1dCQ/maxresdefault.jpg', 'https://i.ytimg.com/vi/X0YDGxu1dCQ/maxresdefault.jpg', '2020-07-09 03:52:20', '2020-07-09 03:52:20');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sequelizemeta`
+-- Table structure for table `SequelizeMeta`
 --
 
-CREATE TABLE `sequelizemeta` (
+CREATE TABLE `SequelizeMeta` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `sequelizemeta`
+-- Dumping data for table `SequelizeMeta`
 --
 
-INSERT INTO `sequelizemeta` (`name`) VALUES
+INSERT INTO `SequelizeMeta` (`name`) VALUES
 ('20200623040620-create-user.js'),
 ('20200623040703-create-transaction.js'),
 ('20200623040724-create-artist.js'),
@@ -116,10 +102,10 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
+-- Table structure for table `Transactions`
 --
 
-CREATE TABLE `transactions` (
+CREATE TABLE `Transactions` (
   `id` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `startDate` date DEFAULT NULL,
@@ -132,23 +118,22 @@ CREATE TABLE `transactions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `transactions`
+-- Dumping data for table `Transactions`
 --
 
-INSERT INTO `transactions` (`id`, `userId`, `startDate`, `dueDate`, `accountNumber`, `attachment`, `status`, `createdAt`, `updatedAt`) VALUES
-(1, 1, '2020-06-21', '2020-07-29', '15090101', 'https://skripsilive.com/wp-content/uploads/2019/09/buktitranfermhsskripsilive143.jpg', 'approved', '2020-06-23 04:16:42', '2020-06-28 18:28:53'),
-(7, 7, '2020-06-25', '2020-07-26', '15090107', 'https://1.bp.blogspot.com/-aDTJn_UbwsI/XpV8pKryEuI/AAAAAAAACs8/JI_uvQxkPYc2bzIrokHLaCGdYcIIku4CgCLcBGAsYHQ/s1600/Langkah%2Bterakhi.JPG', 'approved', '2020-06-25 09:18:36', '2020-06-25 18:23:05'),
-(29, 2, '2020-06-30', '2020-08-05', '15090103', 'https://2.bp.blogspot.com/-bfPwSboPr5A/WTTtimmy5fI/AAAAAAAAF1c/pTi-d_7xFHYMbdn-BbxrfvdNT-pzE5sAwCLcB/s1600/Bayar%2BIuran%2BBPJS%2BKesehatan%2Bdi%2BATM%2BBCA%2B10.jpg', 'approved', '2020-06-30 03:38:13', '2020-07-05 18:39:17'),
-(30, 37, '2020-06-30', '2020-08-16', '15090107', 'https://www.asuransiku.id/support/images/upload-photos/media/mbanking_06.png', 'approved', '2020-06-30 09:52:53', '2020-07-17 12:09:51'),
-(32, 55, '2020-07-20', '1970-01-01', '150901020', 'https://2.bp.blogspot.com/-bfPwSboPr5A/WTTtimmy5fI/AAAAAAAAF1c/pTi-d_7xFHYMbdn-BbxrfvdNT-pzE5sAwCLcB/s1600/Bayar%2BIuran%2BBPJS%2BKesehatan%2Bdi%2BATM%2BBCA%2B10.jpg', 'rejected', '2020-07-20 08:15:37', '2020-07-20 08:18:27');
+INSERT INTO `Transactions` (`id`, `userId`, `startDate`, `dueDate`, `accountNumber`, `attachment`, `status`, `createdAt`, `updatedAt`) VALUES
+(1, 2, '2020-07-08', '2020-08-07', 'Invalid date', 'https://gotra.sgp1.cdn.digitaloceanspaces.com/web-upload/1527432881_27-05-2018_photo6077615961109801020.jpg', 'approved', '2020-07-08 13:33:09', '2020-07-08 13:33:59'),
+(2, 5, '2020-07-08', '1970-01-01', 'Invalid date', 'https://mediakonsumen.com/files/2018/07/5b55cc555966e.jpg', 'rejected', '2020-07-08 16:57:48', '2020-07-20 15:39:48'),
+(3, 4, '2020-08-11', '2020-08-10', 'Invalid date', 'https://mediakonsumen.com/files/2018/07/5b55cc555966e.jpg', 'approved', '2020-07-08 16:59:28', '2020-07-11 06:18:45'),
+(4, 7, '2020-07-09', '1970-01-01', 'Invalid date', 'https://mediakonsumen.com/files/2018/07/5b55cc555966e.jpg', 'rejected', '2020-07-08 17:14:02', '2020-07-16 13:32:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Table structure for table `Users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `Users` (
   `id` int(11) NOT NULL,
   `fullName` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -163,53 +148,69 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `Users`
 --
 
-INSERT INTO `users` (`id`, `fullName`, `email`, `password`, `gender`, `phone`, `address`, `subscription`, `role`, `createdAt`, `updatedAt`) VALUES
-(1, 'Muhammad Rizki Akbar', 'rizkyakbar1511@gmail.com', '$2b$10$mD3mur1jlWiM15oiYOlrL.fVYpAkMxUeSdBTwCgYKAG3s2pFKvUsa', 'male', '083802595929', 'Jl.Sako Baru, Komplek Graha Bukit Raflesia Blok Q-5', 1, 1, '2020-06-23 04:13:50', '2020-06-28 18:28:53'),
-(2, 'Rendy Ario', 'rendy@dumbsound.com', '$2b$10$C3H/dsrJmYp8r5p5.z8OluRkDYNfNoQJRKVIJROtIjZXhALL128Aa', 'male', '08123456789', 'jl. sako baru test test', 1, 0, '2020-06-23 07:24:36', '2020-07-05 18:39:17'),
-(7, 'Dzaka Raihan', 'dzaka@dumbsound.com', '$2b$10$dGelKRvTXBK9r7bW7gcAAeXlxsv8UgR6i4s2evOP996CHpBcXwqtK', 'male', '0873649234235', 'jl. sako sako sako', 1, 0, '2020-06-24 13:39:45', '2020-06-25 18:23:05'),
-(37, 'M Iqbal Alexander', 'iqbal@dumbsound.com', '$2b$10$CrS7nH9wT3gIRgk1X3MGBuefw7/ZVgx4Yy4W6PWyZCrDwaVsfgPQe', 'male', '081238471923', 'jl. Kalidoni No 10', 1, 0, '2020-06-30 09:51:18', '2020-07-17 17:49:20'),
-(53, 'Rezky Maulana', 'rezky@dumbsound.com', '$2b$10$jrB75ZAbJobiM6Fu.reXsuESDtaXpAm8zBHa4m.KIXS6gjJYG/oKm', 'male', '0853726382737', 'Jl. Yayasan 2 No 30 Blok R5', 0, 0, '2020-07-14 17:39:36', '2020-07-14 17:39:36'),
-(54, 'Ferdian Dwi Cahya', 'ferdian@dumbsound.com', '$2b$10$Dihcr4C7O6jvEqVARUclYOZV6meqiru3GZF4Q5k7kgFhpobGAOUD2', 'male', '081273827372', 'Jl. Kalidoni, Lr. Damai No 25', 0, 0, '2020-07-14 17:42:28', '2020-07-14 17:42:28'),
-(55, 'Ifandi Khainur Rahim', 'ifandi@dumbsound.com', '$2b$10$un8e3KBboq3snw8QaqeawuGxpLYVMMH0Vu5h9JfOmkgNxpbBkIJx6', 'male', '083802919283', 'Jl. Bintaro Raya No 14', 0, 0, '2020-07-14 18:05:21', '2020-07-20 08:18:27');
+INSERT INTO `Users` (`id`, `fullName`, `email`, `password`, `gender`, `phone`, `address`, `subscription`, `role`, `createdAt`, `updatedAt`) VALUES
+(1, 'Muhammad Rizki Akbar', 'rizkyakbar1511@gmail.com', '$2b$10$eL83bhy/w5A8bOJehdKfBOo4A.blvOga1lJmkcWPvGRG9wmtAhPOu', 'male', '083802595929', 'Jl.Sako Baru, Komplek Graha Bukit Raflesia Blok Q-5', 1, 1, '2020-07-08 13:06:30', '2020-07-08 13:06:30'),
+(2, 'M Iqbal Alexander', 'iqbal@dumbsound.com', '$2b$10$/lCKF.xUdVW5LTGH4vDfke6j2/DGqsKrTII9cAifmLOeAqc5Ycjz.', 'male', '08127879873', 'Jl. H. Noerdin Pandji, No 15', 1, 0, '2020-07-08 13:29:51', '2020-07-08 13:33:59'),
+(3, 'Irvan Immaduddin', 'Irvan@dumbsound.com', '$2b$10$GtdDAibO6Gxd4PjO8T5Uo.HtFiPw7bFQIXMP3BC30xcEEu2XvHofy', 'male', '085398234634', 'Jl.Kalidoni Lr. Santun No. 10', 0, 0, '2020-07-08 15:08:00', '2020-07-08 15:08:00'),
+(4, 'Rezky Maulana', 'rezky@dumbsound.com', '$2b$10$p.7Awkg6KyU7GOBOYkljxOKC0PiDhvrh8MiuIlPU7puHNpIRIfVZ6', 'male', '085692345123', 'Jl.Yayasan 2 No 103', 1, 0, '2020-07-08 16:02:41', '2020-07-11 06:18:45'),
+(5, 'Rendy Ario', 'rendy@dumbsound.com', '$2b$10$hgwN.TN0sLtidJuv/c3HFOI7obc1j4qgW2P5MoGcv.4SJRSrptGNy', 'male', '081293847343', 'Jl. Matador No. 13', 0, 0, '2020-07-08 16:05:37', '2020-07-20 15:39:48'),
+(6, 'Muhammad Aldyali', 'aldyali@dumbsound.com', '$2b$10$l1HPegFPQJzdRlbRtHosMee3T.WCtp9JTOgX4wZ9yQ51uUPmFjZQW', 'male', '085683293465', 'Jl. Yayasan 1 No 203', 0, 0, '2020-07-08 16:07:34', '2020-07-08 16:07:34'),
+(7, 'Ryan Dwi Melshi', 'ryan@dumbsound.com', '$2b$10$V7lwVTXuJMjmDf.GceDJx.qWtqR/FMkgXCTElxFjkK6Ze/SoixkVu', 'male', '087634231325', 'Jl. Polda Raya', 0, 0, '2020-07-08 16:40:51', '2020-07-16 13:32:56'),
+(8, 'Iqbal Maulana', 'iqbalm@dumbsound.com', '$2b$10$BLgzk4urh8IGCqHb/FeWV.IBYcdgot0N7.BPIQnmKQm7Cdfoue/X.', 'male', '087512345323', 'Jl. Talang Gading No. 10', 0, 0, '2020-07-09 03:48:04', '2020-07-09 03:48:04'),
+(9, 'Rilo Vambudi', 'rilo@dumbsound.com', '$2b$10$Pa9I8Un.nPp9ZuXYsltCOOyVLdyE3VKlP9IQlCZRCETVgXzUyiw7q', 'male', '087462394929', 'Jl. Tanjung Perak No 120', 0, 0, '2020-07-11 06:47:10', '2020-07-11 06:47:10'),
+(10, 'Doni Primateo', 'doni@dumbsound.com', '$2b$10$WaGW7nQLUf42hPnllXt5KONMyf0dc.Fu3dh/UDIBZWXeazFjZcjQe', 'male', '085703948538', 'Jl. Kebangkan No 1000', 0, 0, '2020-07-11 06:58:25', '2020-07-11 06:58:25'),
+(11, 'Sheila Marcia', 'sheila@dumbsound.com', '$2b$10$kwHDxVHNnj1wRpd.fMlU5uVyJseKLI2ueudqudXj4FbZkgT65BOuy', 'male', '0896830239458', 'Jl. Kuto No 102', 0, 0, '2020-07-11 07:00:30', '2020-07-11 07:00:30'),
+(12, 'Royman', 'roy@dumbsound.com', '$2b$10$lM4Q0uldmghNnHEtxLdoYOeB9KonkVA/GMZwP3FDOcFVp/LZ3fKi2', 'male', '0856372839123', 'Jl. Kepandaian NO 100', 0, 0, '2020-07-11 07:02:46', '2020-07-11 07:02:46'),
+(13, 'Tika Apriyani', 'tika@dumbsound.com', '$2b$10$Vga4DeUVJRE0w.VXVE0gnO8IVKlVUwtnKsW6F4OqE2FRCGA0XQ/bK', 'male', '0812847234923', 'Jl.Sapta Marga, Komp, Citra Damai II', 0, 0, '2020-07-11 07:28:53', '2020-07-11 07:28:53'),
+(14, 'Ardina', 'dina@dumbsound.com', '$2b$10$Qvc.xr1AGz33PTlQDHnu7e3hiWomuFwByuW1FjbrbhHk3fAaVokIC', 'male', '081274929392', 'Jl. Triantama No 12', 0, 0, '2020-07-11 07:35:48', '2020-07-11 07:35:48'),
+(15, 'Rezky', 'rezky@gmail.com', '$2b$10$LHuPEFFbbNzT1YygyFvX5uYCsWMDhT2zSjRizo6bGf.iwiHtUqofS', 'male', '081274623626', 'Jl. Yayasan 3 no 15', 0, 0, '2020-07-13 13:06:42', '2020-07-13 13:06:42'),
+(16, 'hamidi rahman', 'rahman@dumbsound.com', '$2b$10$e7G4ftoNZpzeQzl6vQQTou11biHbCl3dtYilp..rmtim06KNZsDkK', 'male', '081274829382', 'Jl. 22 ilir, ', 0, 0, '2020-07-13 13:15:50', '2020-07-13 13:15:50'),
+(17, 'isabella', 'isabella@gmail.com', '$2b$10$gkMBZma.RMsvHluIVBCj5.wSC0BXvfoBdcacPpeIedXTlL8KcE10y', 'female', '0812345682392', 'Jl.Sako Baru, Komplek Graha Bukit Raflesia Blok Q-5', 0, 0, '2020-07-13 13:24:07', '2020-07-13 13:24:07'),
+(18, 'fahriz', 'fahriz@gmail.com', '$2b$10$iJV.XFzZK6UydN7e6.pA9.VI80cKHsenz0R3CnSrgGkZkjzAmR0xe', 'female', '0812345682392', 'Jl.Sako Baru, Komplek Graha Bukit Raflesia Blok Q-5', 0, 0, '2020-07-13 13:28:37', '2020-07-13 13:28:37'),
+(19, 'Ridwan', 'ridwan@dumbsound.com', '$2b$10$kxW2PXSotfH5s12esDA1pOIbTDWekIQ/S21Y.4.8pIjLON1PAvSEC', 'male', '0812746236238', 'Jl. Tanjung perak no 3', 0, 0, '2020-07-13 13:32:57', '2020-07-13 13:32:57'),
+(20, 'iwan', 'iwan@dumbsound.com', '$2b$10$gaVz.hjaHsXLQCscJgJ86OTjRFiBD7OOieW2.qfZIVW0t0tyP6SFW', 'male', '0856742381293', 'Jl. Kalidoni no 15', 0, 0, '2020-07-13 13:35:48', '2020-07-13 13:35:48'),
+(21, 'irvan', 'irvan15@dumbsound.com', '$2b$10$K39Vp3Gn6TJ2D6crRrPFbebAau3NgfDqpQiKpmnT9djMsF44FWBh.', 'male', '08237124723848', 'jl. sekip ujung no 15', 0, 0, '2020-07-13 13:36:55', '2020-07-13 13:36:55'),
+(22, 'Andre ', 'andre@dumbsound.com', '$2b$10$ZhpofPMnwQQvGVx1WCLTI.4XSQWeqq8wJmlz0I9Af3.nDBYk9tvxW', 'male', '08561234823842', 'jl. Graha bukit raflesia', 0, 0, '2020-07-13 13:38:54', '2020-07-13 13:38:54'),
+(23, 'haris', 'haris@outlook.com', '$2b$10$OdwdoJAcgV3W9BEivPVa3uj2JQqxwBEY/FjTj9sdWGnL.DyGEKFNK', 'male', '0812742834234', 'jl. ajen no 25', 0, 0, '2020-07-13 13:42:14', '2020-07-13 13:42:14');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `artists`
+-- Indexes for table `Artists`
 --
-ALTER TABLE `artists`
+ALTER TABLE `Artists`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `music`
+-- Indexes for table `Music`
 --
-ALTER TABLE `music`
+ALTER TABLE `Music`
   ADD PRIMARY KEY (`id`),
   ADD KEY `artistId` (`artistId`);
 
 --
--- Indexes for table `sequelizemeta`
+-- Indexes for table `SequelizeMeta`
 --
-ALTER TABLE `sequelizemeta`
+ALTER TABLE `SequelizeMeta`
   ADD PRIMARY KEY (`name`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `transactions`
+-- Indexes for table `Transactions`
 --
-ALTER TABLE `transactions`
+ALTER TABLE `Transactions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `userId` (`userId`);
 
 --
--- Indexes for table `users`
+-- Indexes for table `Users`
 --
-ALTER TABLE `users`
+ALTER TABLE `Users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -217,44 +218,44 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `artists`
+-- AUTO_INCREMENT for table `Artists`
 --
-ALTER TABLE `artists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE `Artists`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `music`
+-- AUTO_INCREMENT for table `Music`
 --
-ALTER TABLE `music`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+ALTER TABLE `Music`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `transactions`
+-- AUTO_INCREMENT for table `Transactions`
 --
-ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+ALTER TABLE `Transactions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT for table `Users`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+ALTER TABLE `Users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `music`
+-- Constraints for table `Music`
 --
-ALTER TABLE `music`
-  ADD CONSTRAINT `music_ibfk_1` FOREIGN KEY (`artistId`) REFERENCES `artists` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Music`
+  ADD CONSTRAINT `Music_ibfk_1` FOREIGN KEY (`artistId`) REFERENCES `Artists` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `transactions`
+-- Constraints for table `Transactions`
 --
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`);
+ALTER TABLE `Transactions`
+  ADD CONSTRAINT `Transactions_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `Users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
